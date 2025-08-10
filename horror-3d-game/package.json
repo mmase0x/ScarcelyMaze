@@ -1,0 +1,22 @@
+{
+  "name": "horror-3d-game",
+  "version": "1.0.0",
+  "description": "A 3D horror game where players choose one of three doors to escape, with two doors leading to monsters.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "horror",
+    "3D",
+    "game",
+    "javascript",
+    "html"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.137.0",
+    "live-server": "^1.2.1"
+  }
+}
