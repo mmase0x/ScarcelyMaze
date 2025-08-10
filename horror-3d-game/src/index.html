@@ -7,18 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <h1>3Dホラーゲーム</h1>
-        <p>スタートボタンを押してゲームを開始してください。</p>
-        <button id="start-button">スタート</button>
-        <div id="doors" class="hidden">
-            <h2>どのドアを選びますか？</h2>
-            <button class="door" data-door="1">ドア 1</button>
-            <button class="door" data-door="2">ドア 2</button>
-            <button class="door" data-door="3">ドア 3</button>
-        </div>
-        <div id="result" class="hidden"></div>
-    </div>
+    <div id="game-container" style="width:100vw; height:100vh; position:relative; overflow:hidden;"></div>
     <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
     <script src="main.js"></script>
 </body>
