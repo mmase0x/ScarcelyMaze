@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container" style="width:100vw; height:100vh; position:relative; overflow:hidden;"></div>
+        <div id="game-container" style="width:100vw; height:100vh; position:relative; overflow:hidden;"></div>
+        <div id="move-buttons" style="position:fixed; right:2vw; bottom:2vw; z-index:20; display:flex; flex-direction:column; gap:1vw;">
+            <button id="btn-forward" style="width:60px; height:60px; font-size:2em; border-radius:50%;">↑</button>
+            <div style="display:flex; gap:1vw; justify-content:center;">
+                <button id="btn-left" style="width:60px; height:60px; font-size:2em; border-radius:50%;">←</button>
+                <button id="btn-right" style="width:60px; height:60px; font-size:2em; border-radius:50%;">→</button>
+            </div>
+        </div>
     <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.157.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="main.js"></script>
