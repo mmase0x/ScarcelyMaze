@@ -1,13 +1,19 @@
 // 3Dドア脱出ゲーム
 const container = document.getElementById('game-container');
-const width = window.innerWidth;
-const height = window.innerHeight;
+function getContainerSize() {
+    return {
+        width: container.clientWidth || window.innerWidth,
+        height: container.clientHeight || window.innerHeight
+    };
+}
+let { width, height } = getContainerSize();
 
 // シーン、カメラ、レンダラー
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(width, height);
+renderer.setClearColor(0x111111);
 container.appendChild(renderer.domElement);
 
 // ライト
@@ -38,7 +44,18 @@ for (let i = 0; i < 3; i++) {
 }
 
 // カメラ位置
+
 camera.position.set(0, 1, 7);
+
+// ウィンドウリサイズ対応
+window.addEventListener('resize', () => {
+    const size = getContainerSize();
+    width = size.width;
+    height = size.height;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+});
 
 // レイキャスターとマウス
 const raycaster = new THREE.Raycaster();
